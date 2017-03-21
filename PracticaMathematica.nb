@@ -1,0 +1,3967 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    154301,       3958]
+NotebookOptionsPosition[    146643,       3717]
+NotebookOutlinePosition[    147027,       3734]
+CellTagsIndexPosition[    146984,       3731]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\</Users/guillemontanari/C3/Datos/Ind_Sit_Jur.csv\>\"", ",", " ", 
+     "\"\<CSV\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.698364080419531*^9, 3.698364136833914*^9}, {
+  3.698369720928063*^9, 3.698369734497938*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "data", "]"}]], "Input",
+ CellChangeTimes->{{3.6983641461951313`*^9, 3.698364169145378*^9}, {
+  3.698540633120455*^9, 3.698540647259446*^9}}],
+
+Cell[BoxData["101"], "Output",
+ CellChangeTimes->{{3.698364149291596*^9, 3.698364169929682*^9}, 
+   3.698539353968512*^9, {3.698540635472443*^9, 3.698540649012679*^9}, 
+   3.6985414346250343`*^9, 3.6985427952847548`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PositionIndex", "[", 
+  RowBox[{"data", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698364211458026*^9, 3.6983642448310003`*^9}, {
+  3.698364349993987*^9, 3.6983643500792723`*^9}, {3.6983643821418047`*^9, 
+  3.698364392651998*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"CLAVE DE ENTIDAD\"\>", "\[Rule]", 
+    RowBox[{"{", "1", "}"}]}], ",", 
+   RowBox[{"\<\"ENTIDAD\"\>", "\[Rule]", 
+    RowBox[{"{", "2", "}"}]}], ",", 
+   RowBox[{"\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL\"\>", "\[Rule]", 
+    RowBox[{"{", "3", "}"}]}], ",", 
+   RowBox[{"\<\"SENTENCIADO\"\>", "\[Rule]", 
+    RowBox[{"{", "4", "}"}]}], ",", 
+   RowBox[{"\<\"PROCESADO\"\>", "\[Rule]", 
+    RowBox[{"{", "5", "}"}]}], ",", 
+   RowBox[{"\<\"\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+     "6", ",", "7", ",", "8", ",", "9", ",", "10", ",", "11", ",", "12", ",", 
+      "13", ",", "14", ",", "15", ",", "16", ",", "17", ",", "18", ",", "19", 
+      ",", "20", ",", "21", ",", "22", ",", "23", ",", "24", ",", "25", ",", 
+      "26", ",", "27", ",", "28", ",", "29", ",", "30", ",", "31", ",", "32", 
+      ",", "33", ",", "34", ",", "35", ",", "36", ",", "37", ",", "38", ",", 
+      "39", ",", "40", ",", "41", ",", "42", ",", "43", ",", "44", ",", "45", 
+      ",", "46", ",", "47", ",", "48", ",", "49", ",", "50", ",", "51", ",", 
+      "52", ",", "53", ",", "54", ",", "55", ",", "56", ",", "57", ",", "58", 
+      ",", "59", ",", "60", ",", "61", ",", "62", ",", "63", ",", "64", ",", 
+      "65", ",", "66", ",", "67", ",", "68", ",", "69", ",", "70", ",", "71", 
+      ",", "72"}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.698364216417506*^9, 3.69836424605473*^9}, 
+   3.6983643510499363`*^9, 3.698364393300227*^9, 3.698539356435467*^9, 
+   3.698541435803204*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"ndata", " ", "=", 
+    RowBox[{"data", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", " ", 
+       RowBox[{"1", ";;", "5"}]}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", "ndata"}], "Input",
+ CellChangeTimes->{{3.698364422096539*^9, 3.698364441005786*^9}, {
+  3.698364490158721*^9, 3.698364522870471*^9}, {3.6983648115274*^9, 
+  3.698364820079145*^9}, {3.698539944470992*^9, 3.698539963519485*^9}, {
+  3.6985400869383383`*^9, 3.698540090230949*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"CLAVE DE ENTIDAD\"\>", ",", "\<\"ENTIDAD\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL\"\>", 
+     ",", "\<\"SENTENCIADO\"\>", ",", "\<\"PROCESADO\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #4 \\\"\\\"CUICATL\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #8 \\\"\\\"MAT\
+\[CapitalIAcute]AS ROMERO\\\"\\\".\"\>", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #1 \
+\\\"\\\"PENITENCIARIA CENTRAL\\\"\\\".\"\>", ",", "24", ",", "12"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #9 \\\"\\\"JUCHIT\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #6 \
+\\\"\\\"TUXTEPEC\\\"\\\".\"\>", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #5 \
+\\\"\\\"COSOLAPA\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #2 \
+\\\"\\\"ETLA\\\"\\\".\"\>", ",", "2", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #3 \
+\\\"\\\"MIAHUATL\[CapitalAAcute]N\\\"\\\".\"\>", ",", "4", ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"HUAJUAPAN\\\"\\\".\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL FEMENIL \
+\\\"\\\"TANIVET\\\"\\\".\"\>", ",", "4", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #7 \
+\\\"\\\"TEHUANTEPEC\\\"\\\".\"\>", ",", "14", ",", "42"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"OAXACA\\\"\\\".\"\>", ",", "28", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #10 \
+\\\"\\\"JUQUILA\\\"\\\".\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "\<\"CHIAPAS\"\>", 
+     ",", "\<\"CENTRO ESTATAL DE REINSERCI\[CapitalOAcute]N SOCIAL PARA \
+SENTENCIADOS # 14 \\\"\\\"EL AMATE\\\"\\\".\"\>", ",", "46", ",", "105"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "\<\"CHIAPAS\"\>", 
+     ",", "\<\"CENTRO ESTATAL DE REINSERCI\[CapitalOAcute]N SOCIAL PARA \
+SENTENCIADOS # 5.\"\>", ",", "9", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "\<\"CHIAPAS\"\>", 
+     ",", "\<\"CENTRO ESTATAL DE REINSERCI\[CapitalOAcute]N SOCIAL PARA \
+SENTENCIADOS # 17 \\\"\\\"EL BAMB\[CapitalUAcute]\\\"\\\".\"\>", ",", "5", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "\<\"CHIAPAS\"\>", 
+     ",", "\<\"CENTRO ESTATAL DE REINSERCI\[CapitalOAcute]N SOCIAL PARA \
+SENTENCIADOS # 4 \\\"\\\"TAPACHULA\\\"\\\".\"\>", ",", "0", ",", "4"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "7", ",", "\<\"CHIAPAS\"\>", 
+     ",", "\<\"CENTRO ESTATAL DE REINSERCI\[CapitalOAcute]N SOCIAL PARA \
+SENTENCIADOS # 164 \\\"\\\"OCOSINGO\\\"\\\".\"\>", ",", "0", ",", "3"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "18", ",", "\<\"NAYARIT\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 4 \
+\\\"\\\"NOROESTE\\\"\\\"\"\>", ",", "11", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "18", ",", "\<\"NAYARIT\"\>", 
+     ",", "\<\"COMPLEJO PENITENCIARIO ISLAS MAR\[CapitalIAcute]AS\"\>", ",", 
+     "39", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "18", ",", "\<\"NAYARIT\"\>", 
+     ",", "\<\"CENTRO DE REHABILITACI\[CapitalOAcute]N SOCIAL VENUSTIANO \
+CARRANZA\"\>", ",", "10", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "26", ",", "\<\"SONORA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"CD. OBREG\
+\[CapitalOAcute]N\\\"\\\". \"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "26", ",", "\<\"SONORA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"NAVOJOA\\\"\\\". \"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "26", ",", "\<\"SONORA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"NOGALES II \
+VARONIL\\\"\\\".\"\>", ",", "8", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "26", ",", "\<\"SONORA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #11 \
+\\\"\\\"CPS-SONORA\\\"\\\". \"\>", ",", "5", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "26", ",", "\<\"SONORA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"HERMOSILLO\
+\\\"\\\". \"\>", ",", "2", ",", "35"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "12", ",", "\<\"GUERRERO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"ACAPULCO \
+DE JU\[CapitalAAcute]REZ\\\"\\\".\"\>", ",", "11", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "12", ",", "\<\"GUERRERO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"CHILPANCINGO DE LOS BRAVOS\\\"\\\". \"\>", ",", "2", ",", "17"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "12", ",", "\<\"GUERRERO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"IGUALA DE \
+LA INDEPENDENCIA\\\"\\\".\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"RECLUSORIO PREVENTIVO VARONIL NORTE.\"\>", ",", "3", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"RECLUSORIO PREVENTIVO VARONIL SUR.\"\>", ",", "9", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"RECLUSORIO PREVENTIVO VARONIL ORIENTE.\"\>", ",", "10", ",", 
+     "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"PENITENCIARIA DISTRITO FEDERAL.\"\>", ",", "5", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"RECLUSORIO FEMENIL SANTA MARTHA ACATITLA.\"\>", ",", "0", ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "9", ",", "\<\"DISTRITO FEDERAL\"\>", 
+     ",", "\<\"CENTRO FEMENIL DE READAPTACI\[CapitalOAcute]N SOCIAL \
+TEPEPAN.\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL ESTATAL, # 1.\"\>",
+      ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL ESTATAL, # 2.\"\>",
+      ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL ESTATAL, # 3.\"\>",
+      ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL ESTATAL, # 4.\"\>",
+      ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DISTRITAL, \
+\\\"\\\"GUACHOCHI\\\"\\\".\"\>", ",", "4", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DISTRITAL, \
+\\\"\\\"GUERRERO\\\"\\\".\"\>", ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DISTRITAL, \
+\\\"\\\"GUADALUPE Y CALVO\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DE BAJO \
+RIESGO.\"\>", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "8", ",", "\<\"CHIHUAHUA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 9 \
+\\\"\\\"NORTE\\\"\\\".\"\>", ",", "9", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "31", ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL VARONIL DE M\
+\[CapitalEAcute]RIDA.\"\>", ",", "19", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "31", ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL FEMENIL DE M\
+\[CapitalEAcute]RIDA.\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "31", ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DE EBTUM \
+VALLADOLID.\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "31", ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL EN TEKAX.\"\>", 
+     ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENSI\[CapitalOAcute]N Y READAPTACI\
+\[CapitalOAcute]N SOCIAL DE SANTIAGUITO VARONIL\"\>", ",", "1", ",", "6"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENSI\[CapitalOAcute]N Y \
+READPTACI\[CapitalOAcute]N SOCIAL DE SANTIAGUITO FEMENIL\"\>", ",", "1", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENSI\[CapitalOAcute]N Y READAPTACI\
+\[CapitalOAcute]N SOCIAL DE OTUMBA \\\"\\\"TEPACHICO\\\"\\\"\"\>", ",", "1", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENSI\[CapitalOAcute]N Y READAPTACI\
+\[CapitalOAcute]N SOCIAL DE VALLE DE BRAVO\"\>", ",", "1", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENCI\[CapitalOAcute]N Y READAPTACI\
+\[CapitalOAcute]N SOCIAL NEZA VARONIL \\\"\\\"BORDO\\\"\\\"\"\>", ",", "1", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENCI\[CapitalOAcute]N DE READAPTACI\
+\[CapitalOAcute]N SOCIAL NEZA FEMENIL \\\"\\\"BORDO\\\"\\\"\"\>", ",", "0", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL  N\
+\[Degree] 1 \\\"\\\"ALTIPLANO\\\"\\\"\"\>", ",", "0", ",", "8"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{
+    "15", ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", 
+     ",", "\<\"CENTRO DE PREVENSI\[CapitalOAcute]N Y READAPTACI\
+\[CapitalOAcute]N SOCIAL  DE TLANEPANTLA \\\"\\\"BARRIENTOS\\\"\\\"\"\>", ",",
+      "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "13", ",", "\<\"HIDALGO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DE PACHUCA\"\>", 
+     ",", "6", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "13", ",", "\<\"HIDALGO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DE \
+IXMIQUILPAN\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "13", ",", "\<\"HIDALGO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL DE ACTOPAN\"\>", 
+     ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "25", ",", "\<\"SINALOA\"\>", 
+     ",", "\<\"CENTRO DE EJECUCI\[CapitalOAcute]N DE LAS CONSECUENCIAS JUR\
+\[CapitalIAcute]DICAS DEL DELITO, LOS MOCHIS. \"\>", ",", "7", ",", "4"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "25", ",", "\<\"SINALOA\"\>", 
+     ",", "\<\"CENTRO DE EJECUCI\[CapitalOAcute]N DE LAS CONSECUENCIAS JUR\
+\[CapitalIAcute]DICAS DEL DELITO, MAZATL\[CapitalAAcute]N. \"\>", ",", "0", 
+     ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "25", ",", "\<\"SINALOA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 8 \
+\\\"\\\"NOR-PONIENTE\\\"\\\".\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"LIC. DAVID \
+FRANCO RODR\[CapitalIAcute]GUEZ\\\"\\\" MIL CUMBRES CHARO. \"\>", ",", "3", 
+     ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"GRAL. \
+FRANCISCO J. MUJICA\\\"\\\" MORELIA. \"\>", ",", "2", ",", "3"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"LIC. \
+EDUARDO RU\[CapitalIAcute]Z\\\"\\\" URUAPAN. \"\>", ",", "4", ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL LA PIEDAD. \"\>", 
+     ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL ZAMORA \"\>", ",", 
+     "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "21", ",", "\<\"PUEBLA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"PUEBLA\\\"\
+\\\". \"\>", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "21", ",", "\<\"PUEBLA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"HUAUCHINANGO\\\"\\\".\"\>", ",", "4", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "21", ",", "\<\"PUEBLA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"CHOLULA\\\"\\\". \"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "21", ",", "\<\"PUEBLA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"TEHUAC\
+\[CapitalAAcute]N\\\"\\\". \"\>", ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "\<\"BAJA CALIFORNIA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"MEXICALI\\\
+\"\\\".\"\>", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "\<\"BAJA CALIFORNIA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"ENSENADA\\\
+\"\\\".\"\>", ",", "7", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "2", ",", "\<\"BAJA CALIFORNIA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"EL HONGO\\\
+\"\\\".\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "30", ",", "\<\"VERACRUZ\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"AMATL\
+\[CapitalAAcute]N DE LOS REYES\\\"\\\". \"\>", ",", "1", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "30", ",", "\<\"VERACRUZ\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"TUXPAN\\\"\
+\\\".\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "30", ",", "\<\"VERACRUZ\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #5 \\\"\\\
+\"ORIENTE\\\"\\\". \"\>", ",", "2", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "11", ",", "\<\"GUANAJUATO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #12 \
+\\\"\\\"CPS-GUANAJUATO\\\"\\\".\"\>", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "6", ",", "\<\"COLIMA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"COLIMA\\\"\
+\\\".\"\>", ",", "2", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "17", ",", "\<\"MORELOS\"\>", 
+     ",", "\<\"CENTRO DE READAPTACI\[CapitalOAcute]N SOCIAL DE  MORELOS \
+VARONIL\"\>", ",", "0", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "17", ",", "\<\"MORELOS\"\>", 
+     ",", "\<\"CENTRO DE READAPTACI\[CapitalOAcute]N SOCIAL MORELOS FEMENIL\"\
+\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "17", ",", "\<\"MORELOS\"\>", ",", "\<\"CARCEL DISTRITAL DE CUAUTLA\"\>", 
+     ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "14", ",", "\<\"JALISCO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"PUENTE \
+GRANDE\\\"\\\". \"\>", ",", "0", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "14", ",", "\<\"JALISCO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 2 \
+\\\"\\\"OCCIDENTE\\\"\\\".\"\>", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "27", ",", "\<\"TABASCO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"VILLAHERMOSA\\\"\\\".\"\>", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "27", ",", "\<\"TABASCO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 6 \
+\\\"\\\"SURESTE\\\"\\\".\"\>", ",", "7", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "10", ",", "\<\"DURANGO\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL  N\[Degree]1 \
+\\\"\\\"DURANGO\\\"\\\".\"\>", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "10", ",", "\<\"DURANGO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 7 \
+\\\"\\\"NOR-NOROESTE.\\\"\\\"\"\>", ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "10", ",", "\<\"DURANGO\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #14 \
+\\\"\\\"CPS-DURANGO\\\"\\\". \"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "4", ",", "\<\"CAMPECHE\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \\\"\\\"SAN \
+FRANCISCO KOBEN\\\"\\\".\"\>", ",", "0", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "5", ",", "\<\"COAHUILA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL # 10 \
+NOR-NORESTE\\\"\\\".\"\>", ",", "6", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "22", ",", "\<\"QUER\[CapitalEAcute]TARO\"\>", 
+     ",", "\<\"CENTRO DE READAPTACI\[CapitalOAcute]N SOCIAL \\\"\\\"SAN JOS\
+\[CapitalEAcute] EL ALTO\\\"\\\".\"\>", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "19", ",", "\<\"NUEVO LE\[CapitalOAcute]N\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"CADEREYTA\\\"\\\", NUEVO LE\[CapitalOAcute]N. \"\>", ",", "1", ",", 
+     "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "23", ",", "\<\"QUINTANA ROO\"\>", 
+     ",", "\<\"C\[CapitalAAcute]RCEL P\[CapitalUAcute]BLICA \\\"\\\"BENITO JU\
+\[CapitalAAcute]REZ\\\"\\\".\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "32", ",", "\<\"ZACATECAS\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"CIENEGUILLAS\\\"\\\". \"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "\<\"AGUASCALIENTES\"\>", 
+     ",", "\<\"NO CUENTA CON PERSONAS IND\[CapitalIAcute]GENAS INTERNAS \"\>",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "\<\"BAJA CALIFORNIA SUR\"\>", 
+     ",", "\<\"NO CUENTA CON PERSONAS IND\[CapitalIAcute]GENAS INTERNAS \"\>",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "24", ",", "\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", 
+     ",", "\<\"NO CUENTA CON PERSONAS IND\[CapitalIAcute]GENAS INTERNAS \"\>",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "28", ",", "\<\"TAMAULIPAS\"\>", 
+     ",", "\<\"NO CUENTA CON PERSONAS IND\[CapitalIAcute]GENAS INTERNAS \"\>",
+      ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "29", ",", "\<\"TLAXCALA\"\>", 
+     ",", "\<\"NO CUENTA CON PERSONAS IND\[CapitalIAcute]GENAS INTERNAS \"\>",
+      ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.698540091140315*^9, 3.69854143694738*^9, 
+  3.6985428005283117`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data2", " ", "=", " ", 
+  RowBox[{"Select", "[", 
+   RowBox[{"ndata", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", " ", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], " ", "===", " ", "20"}], " ", "&"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.698364873638378*^9, 3.698364966053741*^9}, {
+  3.698365163983391*^9, 3.698365237162768*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #4 \\\"\\\"CUICATL\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #8 \\\"\\\"MAT\
+\[CapitalIAcute]AS ROMERO\\\"\\\".\"\>", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #1 \
+\\\"\\\"PENITENCIARIA CENTRAL\\\"\\\".\"\>", ",", "24", ",", "12"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #9 \\\"\\\"JUCHIT\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #6 \
+\\\"\\\"TUXTEPEC\\\"\\\".\"\>", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #5 \
+\\\"\\\"COSOLAPA\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #2 \
+\\\"\\\"ETLA\\\"\\\".\"\>", ",", "2", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #3 \
+\\\"\\\"MIAHUATL\[CapitalAAcute]N\\\"\\\".\"\>", ",", "4", ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"HUAJUAPAN\\\"\\\".\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL FEMENIL \
+\\\"\\\"TANIVET\\\"\\\".\"\>", ",", "4", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #7 \
+\\\"\\\"TEHUANTEPEC\\\"\\\".\"\>", ",", "14", ",", "42"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"OAXACA\\\"\\\".\"\>", ",", "28", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #10 \
+\\\"\\\"JUQUILA\\\"\\\".\"\>", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{{3.698364925062652*^9, 3.698364967110293*^9}, 
+   3.69836517987321*^9, {3.698365210637754*^9, 3.698365238015101*^9}, 
+   3.6985393613032923`*^9, 3.698541443415251*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data2", "[", 
+  RowBox[{"[", 
+   RowBox[{"All", ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "4", ",", "5"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698365243210231*^9, 3.698365251482011*^9}, {
+  3.698539979853978*^9, 3.6985399976209784`*^9}, {3.6985412194050837`*^9, 
+  3.698541219555462*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "24", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "2", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "14", ",", "42"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "28", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{
+  3.6983652520774593`*^9, 3.698539363652573*^9, {3.698539987483602*^9, 
+   3.698539998405253*^9}, 3.69854122044386*^9, 3.698541451005457*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"data2", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5"}], "}"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6983652550586557`*^9, 3.698365266436275*^9}, {
+  3.698540020543715*^9, 3.698540024917173*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"88", ",", "102"}], "}"}]], "Output",
+ CellChangeTimes->{3.698540737591696*^9, 3.698541457820726*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Tally", "[", 
+  RowBox[{"ndata", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4", ",", "5"}], "}"}]}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.698365551373682*^9, 3.698365576620611*^9}, {
+  3.6983659065563498`*^9, 3.698365981736498*^9}, {3.698539914649458*^9, 
+  3.6985399205157013`*^9}, {3.698541393599187*^9, 3.698541405338421*^9}, {
+  3.698541481049177*^9, 3.6985415168336573`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ENTIDAD\"\>", ",", "\<\"SENTENCIADO\"\>", 
+       ",", "\<\"PROCESADO\"\>"}], "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "5", ",", "3"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "0", ",", "4"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "24", ",", "12"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "0", ",", "2"}], "}"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "2", ",", "7"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "4"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "2", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "4", ",", "10"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "14", ",", "42"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "28", ",", "15"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"OAXACA\"\>", ",", "1", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIAPAS\"\>", ",", "46", ",", "105"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIAPAS\"\>", ",", "9", ",", "12"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIAPAS\"\>", ",", "5", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIAPAS\"\>", ",", "0", ",", "4"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIAPAS\"\>", ",", "0", ",", "3"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"NAYARIT\"\>", ",", "11", ",", "11"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"NAYARIT\"\>", ",", "39", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"NAYARIT\"\>", ",", "10", ",", "7"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SONORA\"\>", ",", "0", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SONORA\"\>", ",", "0", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SONORA\"\>", ",", "8", ",", "6"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SONORA\"\>", ",", "5", ",", "15"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SONORA\"\>", ",", "2", ",", "35"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"GUERRERO\"\>", ",", "11", ",", "10"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"GUERRERO\"\>", ",", "2", ",", "17"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"GUERRERO\"\>", ",", "0", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "3", ",", "0"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "9", ",", "0"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "10", ",", "6"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "5", ",", "0"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+     "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "2", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "1", ",", "0"}], "}"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "3", ",", "0"}], "}"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "4", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "0", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "1", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CHIHUAHUA\"\>", ",", "9", ",", "3"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "19", ",", "5"}], "}"}], 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "2", ",", "0"}], "}"}], 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "1", ",", "0"}], "}"}], 
+     ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "1", ",", "6"}],
+       "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "1", ",", "0"}],
+       "}"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "0", ",", "1"}],
+       "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "0", ",", "8"}],
+       "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "0", ",", "2"}],
+       "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"HIDALGO\"\>", ",", "6", ",", "9"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"HIDALGO\"\>", ",", "1", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"HIDALGO\"\>", ",", "0", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SINALOA\"\>", ",", "7", ",", "4"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SINALOA\"\>", ",", "0", ",", "4"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SINALOA\"\>", ",", "2", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "3", ",", "0"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "2", ",", "3"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "4", ",", "1"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "1", ",", "0"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "0", ",", "2"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"PUEBLA\"\>", ",", "2", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"PUEBLA\"\>", ",", "4", ",", "3"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"PUEBLA\"\>", ",", "1", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"PUEBLA\"\>", ",", "3", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "0", ",", "3"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "7", ",", "3"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"VERACRUZ\"\>", ",", "1", ",", "0"}], "}"}], ",", "2"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"VERACRUZ\"\>", ",", "2", ",", "8"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"GUANAJUATO\"\>", ",", "10", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"COLIMA\"\>", ",", "2", ",", "9"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MORELOS\"\>", ",", "0", ",", "7"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MORELOS\"\>", ",", "1", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"MORELOS\"\>", ",", "2", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"JALISCO\"\>", ",", "0", ",", "8"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"JALISCO\"\>", ",", "1", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"TABASCO\"\>", ",", "1", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"TABASCO\"\>", ",", "7", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DURANGO\"\>", ",", "1", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DURANGO\"\>", ",", "3", ",", "2"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"DURANGO\"\>", ",", "1", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"CAMPECHE\"\>", ",", "0", ",", "7"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"COAHUILA\"\>", ",", "6", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1", ",", "2"}], "}"}],
+      ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1", ",", "0"}], 
+      "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0", ",", "1"}], "}"}], ",", "1"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"ZACATECAS\"\>", ",", "0", ",", "1"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+     "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0", ",", "0"}], "}"}], ",",
+      "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0", ",", "0"}], 
+      "}"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"TLAXCALA\"\>", ",", "0", ",", "0"}], "}"}], ",", "1"}], 
+    "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.698365577576857*^9, {3.698365948102572*^9, 3.698365982155905*^9}, 
+   3.698539367907535*^9, {3.6985399155923033`*^9, 3.698539921053337*^9}, {
+   3.6985400366796503`*^9, 3.698540040423444*^9}, {3.6985407591365232`*^9, 
+   3.698540778879198*^9}, 3.698541413468095*^9, {3.698541486513237*^9, 
+   3.698541517311431*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TableForm", "[", "ndata", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.698366525672452*^9, 3.698366532682973*^9}, {
+  3.698541292289247*^9, 3.6985412940438557`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"ndata", ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], " ", "===", " ", "20"}], " ", "\[Or]", 
+     
+     RowBox[{
+      RowBox[{"#", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], " ", "===", "32"}]}], " ", "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.698366550494763*^9, 3.6983665720835733`*^9}, {
+  3.698366633061483*^9, 3.6983666733784657`*^9}, {3.698366912370874*^9, 
+  3.698366974264642*^9}, {3.698367005983674*^9, 3.698367009807022*^9}, {
+  3.698367041147997*^9, 3.698367120217046*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #4 \\\"\\\"CUICATL\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #8 \\\"\\\"MAT\
+\[CapitalIAcute]AS ROMERO\\\"\\\".\"\>", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #1 \
+\\\"\\\"PENITENCIARIA CENTRAL\\\"\\\".\"\>", ",", "24", ",", "12"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #9 \\\"\\\"JUCHIT\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #6 \
+\\\"\\\"TUXTEPEC\\\"\\\".\"\>", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #5 \
+\\\"\\\"COSOLAPA\\\"\\\".\"\>", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #2 \
+\\\"\\\"ETLA\\\"\\\".\"\>", ",", "2", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #3 \
+\\\"\\\"MIAHUATL\[CapitalAAcute]N\\\"\\\".\"\>", ",", "4", ",", "4"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"HUAJUAPAN\\\"\\\".\"\>", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL FEMENIL \
+\\\"\\\"TANIVET\\\"\\\".\"\>", ",", "4", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #7 \
+\\\"\\\"TEHUANTEPEC\\\"\\\".\"\>", ",", "14", ",", "42"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO FEDERAL DE READAPTACI\[CapitalOAcute]N SOCIAL #13 \
+\\\"\\\"OAXACA\\\"\\\".\"\>", ",", "28", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #10 \
+\\\"\\\"JUQUILA\\\"\\\".\"\>", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "32", ",", "\<\"ZACATECAS\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL \
+\\\"\\\"CIENEGUILLAS\\\"\\\". \"\>", ",", "0", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.698367121972077*^9, 3.698539383895917*^9, 
+  3.698541565272635*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sdata", "=", " ", 
+   RowBox[{"Select", "[", 
+    RowBox[{"ndata", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], " ", "===", " ", "20"}], "&"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6983671394983473`*^9, 3.698367140033605*^9}, {
+  3.6983671703522882`*^9, 3.698367176232523*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"sdata", "[", 
+   RowBox[{"[", 
+    RowBox[{"All", ",", "4"}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698367179210206*^9, 3.698367210143132*^9}}],
+
+Cell[BoxData["88"], "Output",
+ CellChangeTimes->{{3.698367185412045*^9, 3.6983672109453163`*^9}, 
+   3.6985393891419897`*^9, 3.6985415769878407`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sentenciados", "[", 
+   RowBox[{"data_", ",", " ", "estado_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"sdata1", ",", " ", "sdata2"}], "}"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"sdata1", "=", 
+      RowBox[{"Select", "[", 
+       RowBox[{"data", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", "2", "]"}], "]"}], " ", "===", " ", "estado"}], " ", 
+         "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"sdata2", " ", "=", " ", 
+      RowBox[{"sdata1", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "4"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Total", "[", "sdata2", "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.698367383483707*^9, 3.698367405404901*^9}, {
+   3.6983675080913*^9, 3.6983675359089127`*^9}, {3.698367760184989*^9, 
+   3.6983678273554993`*^9}, {3.698367872621759*^9, 3.698367912341308*^9}, 
+   3.6983679483325644`*^9, 3.6983680294743*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sentenciados", "[", 
+  RowBox[{"ndata", ",", " ", "\"\<OAXACA\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.6983680023615227`*^9, 3.698368043759692*^9}}],
+
+Cell[BoxData["88"], "Output",
+ CellChangeTimes->{3.698539396932899*^9, 3.698541580603483*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"88", "\[IndentingNewLine]", 
+ RowBox[{"tdata", "=", " ", 
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"ndata", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", 
+       RowBox[{"-", "1"}]}], ",", "2"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.698368310024634*^9, 3.698368423326494*^9}, {
+  3.6983685035547123`*^9, 3.698368504150609*^9}}],
+
+Cell[BoxData["88"], "Output",
+ CellChangeTimes->{{3.698368334877076*^9, 3.6983684020383472`*^9}, 
+   3.6983685055284758`*^9, 3.698539399253714*^9, 3.698541584821128*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"OAXACA\"\>", ",", "\<\"CHIAPAS\"\>", ",", "\<\"NAYARIT\"\>", 
+   ",", "\<\"SONORA\"\>", ",", "\<\"GUERRERO\"\>", 
+   ",", "\<\"DISTRITO FEDERAL\"\>", ",", "\<\"CHIHUAHUA\"\>", 
+   ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+   ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "\<\"HIDALGO\"\>", 
+   ",", "\<\"SINALOA\"\>", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+   ",", "\<\"PUEBLA\"\>", ",", "\<\"BAJA CALIFORNIA\"\>", 
+   ",", "\<\"VERACRUZ\"\>", ",", "\<\"GUANAJUATO\"\>", ",", "\<\"COLIMA\"\>", 
+   ",", "\<\"MORELOS\"\>", ",", "\<\"JALISCO\"\>", ",", "\<\"TABASCO\"\>", 
+   ",", "\<\"DURANGO\"\>", ",", "\<\"CAMPECHE\"\>", ",", "\<\"COAHUILA\"\>", 
+   ",", "\<\"QUER\[CapitalEAcute]TARO\"\>", 
+   ",", "\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "\<\"QUINTANA ROO\"\>", 
+   ",", "\<\"ZACATECAS\"\>", ",", "\<\"AGUASCALIENTES\"\>", 
+   ",", "\<\"BAJA CALIFORNIA SUR\"\>", 
+   ",", "\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "\<\"TAMAULIPAS\"\>", 
+   ",", "\<\"TLAXCALA\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.698368334877076*^9, 3.6983684020383472`*^9}, 
+   3.6983685055284758`*^9, 3.698539399253714*^9, 3.6985415848323097`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Do", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"rdata", " ", "=", " ", 
+       RowBox[{"Sentenciados", "[", 
+        RowBox[{"ndata", ",", "i"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "rdata"}], "}"}], "]"}], ";"}], 
+     "\[IndentingNewLine]", ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", " ", "tdata"}], "}"}]}], "]"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.698368407269312*^9, 3.698368420095593*^9}, {
+   3.69836851051014*^9, 3.698368610020886*^9}, {3.69836864537726*^9, 
+   3.698368645841213*^9}, {3.698368699819537*^9, 3.698368740945828*^9}, 
+   3.698368777710661*^9, 3.698368891819541*^9, {3.698368930516479*^9, 
+   3.698368931162277*^9}, {3.698541350857706*^9, 3.6985413520209713`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"OAXACA\"\>", ",", "88"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591190403*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CHIAPAS\"\>", ",", "60"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591197939*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NAYARIT\"\>", ",", "60"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415912077503`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SONORA\"\>", ",", "15"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591217478*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GUERRERO\"\>", ",", "13"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415912287073`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591240856*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591252809*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591264853*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415912769413`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HIDALGO\"\>", ",", "7"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591289112*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SINALOA\"\>", ",", "9"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591301139*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591313179*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"PUEBLA\"\>", ",", "10"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415913252373`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591337338*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"VERACRUZ\"\>", ",", "4"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591349284*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GUANAJUATO\"\>", ",", "10"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415913614283`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"COLIMA\"\>", ",", "2"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591373761*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"MORELOS\"\>", ",", "3"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591386376*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"JALISCO\"\>", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591398432*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TABASCO\"\>", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.69854159141044*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"DURANGO\"\>", ",", "5"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415914224358`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CAMPECHE\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591434436*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"COAHUILA\"\>", ",", "6"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591444213*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591453981*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.69854159146364*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591473423*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ZACATECAS\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591483115*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591492921*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591502618*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415915123587`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.6985415915221243`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TLAXCALA\"\>", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{
+  3.698368646835846*^9, {3.6983687208832273`*^9, 3.6983687417806787`*^9}, {
+   3.698368786123674*^9, 3.698368791183713*^9}, 3.6983688952969503`*^9, 
+   3.698368934322917*^9, 3.698539405870514*^9, 3.698541353778442*^9, 
+   3.698541591535228*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"final", " ", "=", " ", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"rdata", " ", "=", " ", 
+      RowBox[{"Sentenciados", "[", 
+       RowBox[{"ndata", ",", "i"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"AppendTo", "[", 
+      RowBox[{"final", ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "rdata"}], "}"}]}], "]"}], ";"}], 
+    "\[IndentingNewLine]", ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", "tdata"}], "}"}]}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.698368751286865*^9, 3.6983687518470087`*^9}, {
+  3.6983689439497137`*^9, 3.698368966801303*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["final"], "Input",
+ CellChangeTimes->{{3.698368974237653*^9, 3.6983689747682667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "88"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIAPAS\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NAYARIT\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SONORA\"\>", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUERRERO\"\>", ",", "13"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"HIDALGO\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SINALOA\"\>", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PUEBLA\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"VERACRUZ\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUANAJUATO\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COLIMA\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MORELOS\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"JALISCO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TABASCO\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DURANGO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CAMPECHE\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COAHUILA\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ZACATECAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TLAXCALA\"\>", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6983689753991423`*^9, 3.698539415006914*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mdata", " ", "=", " ", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sentenciados", "[", 
+      RowBox[{"ndata", ",", "#"}], "]"}], "&"}], ",", "tdata"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.698369019856186*^9, 3.6983690238012257`*^9}, {
+  3.698369097579093*^9, 3.698369120139311*^9}, {3.698369153923444*^9, 
+  3.698369156209466*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "88", ",", "60", ",", "60", ",", "15", ",", "13", ",", "27", ",", "24", ",",
+    "23", ",", "5", ",", "7", ",", "9", ",", "10", ",", "10", ",", "8", ",", 
+   "4", ",", "10", ",", "2", ",", "3", ",", "1", ",", "8", ",", "5", ",", "0",
+    ",", "6", ",", "1", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",",
+    "0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{{3.698369146979775*^9, 3.6983691569488707`*^9}, 
+   3.698539421453293*^9, 3.6985416306706247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AbsoluteTiming", "[", " ", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sentenciados", "[", 
+      RowBox[{"ndata", ",", "#"}], "]"}], "&"}], ",", "tdata"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6983692420057983`*^9, 3.698369252510912*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.00370499999999999996003197111349436454`3.589388125594971", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "88", ",", "60", ",", "60", ",", "15", ",", "13", ",", "27", ",", "24", 
+     ",", "23", ",", "5", ",", "7", ",", "9", ",", "10", ",", "10", ",", "8", 
+     ",", "4", ",", "10", ",", "2", ",", "3", ",", "1", ",", "8", ",", "5", 
+     ",", "0", ",", "6", ",", "1", ",", "1", ",", "0", ",", "0", ",", "0", 
+     ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6983692544160843`*^9, 3.698539426013941*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Transpose", "[", 
+  RowBox[{"{", 
+   RowBox[{"tdata", ",", " ", "mdata"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698369421676426*^9, 3.698369446458683*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "88"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIAPAS\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NAYARIT\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SONORA\"\>", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUERRERO\"\>", ",", "13"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"HIDALGO\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SINALOA\"\>", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PUEBLA\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"VERACRUZ\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUANAJUATO\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COLIMA\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MORELOS\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"JALISCO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TABASCO\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DURANGO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CAMPECHE\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COAHUILA\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ZACATECAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TLAXCALA\"\>", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.69836943667059*^9, 3.6983694468663054`*^9}, 
+   3.698539428726844*^9, 3.698541636684723*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mdata", " ", "=", " ", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"#", ",", " ", 
+       RowBox[{"Sentenciados", "[", 
+        RowBox[{"ndata", ",", "#"}], "]"}]}], "}"}], "&"}], ",", "tdata"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.698369469267264*^9, 3.69836948669928*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "88"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIAPAS\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NAYARIT\"\>", ",", "60"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SONORA\"\>", ",", "15"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUERRERO\"\>", ",", "13"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"HIDALGO\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SINALOA\"\>", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PUEBLA\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"VERACRUZ\"\>", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUANAJUATO\"\>", ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COLIMA\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MORELOS\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"JALISCO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TABASCO\"\>", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DURANGO\"\>", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CAMPECHE\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COAHUILA\"\>", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ZACATECAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0"}], "}"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TLAXCALA\"\>", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.698369674603902*^9, 3.698539433562745*^9, 
+  3.698541649175091*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<Desktop/sentenciados.csv\>\"", ",", " ", "mdata", ",", "\"\<CSV\>\""}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.69836953691431*^9, 3.698369570108783*^9}, {
+  3.6983697583504667`*^9, 3.698369779006922*^9}}],
+
+Cell[BoxData["\<\"Desktop/sentenciados.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.6983695741944103`*^9, {3.6983696564430227`*^9, 3.698369683241647*^9}, {
+   3.698369764955105*^9, 3.6983697798816843`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.698369866488646*^9, 3.6983698666967897`*^9}, {
+  3.69836994248956*^9, 3.6983699426324043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"5", " ", "FEB", " ", "2017", "  ", "GRAFICAS"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.698533487775518*^9, 3.698533501850615*^9}, {
+   3.698533606440195*^9, 3.698533606922118*^9}, {3.698534140349193*^9, 
+   3.698534150299925*^9}, 3.698534192243229*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"c1", " ", "=", " ", 
+  RowBox[{"Circle", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}], ",", "3"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.69853415246386*^9, 3.698534184530074*^9}, {
+  3.698534388032835*^9, 3.6985343910518837`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Circle", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", "3"}], "]"}]], "Output",
+ CellChangeTimes->{{3.698534176765984*^9, 3.698534185199637*^9}, 
+   3.6985343919922247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"c1", ",", " ", 
+   RowBox[{"Axes", " ", "\[Rule]", " ", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6985341971422977`*^9, 3.69853424882456*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[CircleBox[{1, 1}, 3],
+  Axes->True]], "Output",
+ CellChangeTimes->{3.6985342142184687`*^9, 3.698534249823846*^9, 
+  3.6985343963555927`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d1", " ", "=", " ", 
+  RowBox[{"Disk", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1"}], "}"}], ",", "2"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.698534269721301*^9, 3.6985342925984087`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Disk", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1"}], "}"}], ",", "2"}], "]"}]], "Output",
+ CellChangeTimes->{3.69853429423942*^9, 3.698534401829982*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", "d1", "]"}]], "Input",
+ CellChangeTimes->{{3.6985342961937304`*^9, 3.698534322902857*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[DiskBox[{1, 1}, 2]]], "Output",
+ CellChangeTimes->{3.6985343235184307`*^9, 3.6985344041007338`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g1", " ", "=", " ", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"c1", ",", "d1"}], "}"}], ",", " ", 
+    RowBox[{"Axes", " ", "\[Rule]", " ", "True"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6985343535487127`*^9, 3.69853436034102*^9}, {
+  3.6985347151625137`*^9, 3.698534716200507*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{CircleBox[{1, 1}, 3], DiskBox[{1, 1}, 2]},
+  Axes->True]], "Output",
+ CellChangeTimes->{3.698534363658786*^9, 3.6985344094446917`*^9, 
+  3.698534716934236*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g2", " ", "=", " ", 
+  RowBox[{"Plot", "[", 
+   RowBox[{
+    RowBox[{"Sin", "[", 
+     RowBox[{"\[Pi]", " ", "x"}], "]"}], ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "6"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6985347205406733`*^9, 3.698534723720952*^9}, {
+  3.698534867940243*^9, 3.698534897530066*^9}, {3.698534940106369*^9, 
+  3.6985349832252083`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+    1.], LineBox[CompressedData["
+1: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
+0q2Cqzjc06Dv/TFtgcTGul5FfMLTMFV4Sug7iX3ut59bQZ8GTq/mXW0Svxo3
+YWjLToO9z3VLSzJ+/cHMr/sVpmFe4MYRFTI//wd5R0eVadjH1LydPEdgbZFI
+qr/WNBgKHhBqmSH9OTv9+Y7uNGTJu5fkTpH+FDlYJxtMQ5Ev8cdkgsA/1lRy
+F5pMw9GBOdVb/wg8Fqj79q/FNFznutXqTZD+tCWZ/7OeBqGJYxwJFumPHm1a
+yGEa0m5NOJ0cIPvxgX+8vOs0/Jz/Ym7bQ+BPE/1G2y5MgxNRkiHQQfplcYhj
+fnkauPbTEuybSb8+5t91vj4NKSqmK8/VExiJquwIDJ+GB2ncuuv+ENjD5W7P
+/TtkvUsB3DG/yP5d67ap+OU0ZKwXLr+ACbx4reFvWzJZ76cUgpVNYPV2g6DJ
+tGlI4Ns9x/hM4IiHMn8Uf0zDxZ+qEr4vCbxXrNg9uGca1pgI2wQEEdjXVYv5
+hDUNHr1jtb5+5LyUPM1LG58GIwZf4xpPUs/rXiLdlBnofJ/YGG5L6jMl/05f
+cQbSHStCX2mS83I48qCV+gycnXWlrlci8JrP09Oe2jNw/WDYoDU5z0FulXue
+756B7ZE7NOq4yfo6/XsXT8+AbaCf9apyDp71qGOFn5uBAaL52Opv5HmxqD4u
+fXEGjlrp5LV+5mCl5e08m4JngPphcXPUfQ4WOaa/+syLGTgTeV699DgHN/3m
+s6lsm4GXlY9LC1vZONbGzt62bwaSDpVpPfrNxvuHMs8OsmcgPnyH3MZcNv4m
+4OzLuzADmrFveO/eZ+NXBmV3t8jNAt/2gRtHTNn4fHZUVfyxWah8djav/D0L
+q+3pb1A7MQubkd7u+Pss3FsH7V+cZiFeLHBMM4iFLcdG2DUXZ8GPYxH4mDy/
+YcMhqmDcLEh/zXwZPD+MRRKljDyrZuHFtouSzduHcdLt57lo7xxY/9ssKBkz
+iP2XK9A8D87BL9+Jp3znB7HF25dO8VZzEGt743KGxSBe/P6Ktnh2DryO6Fkc
+lBjERyffn8kNm4Nd8m0eQTEDWPD4Fwmd33Ow82jqQ0ny/8xNpdpV1Wwe/Muh
+x0WnFxtkHSqwPjYPyyLxxYplvVjasI4ZdmIebk/7JcwN9OCfxxsLBjzmIWwS
+WaU/6sErY9qkXkXPg1xYlcO7uW5cNTVUuLp6Ht57gTtvehfe/JN3OfPIAvAK
+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
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{"DefaultBoundaryStyle" -> Automatic, "ScalingFunctions" -> None},
+  PlotRange->{{0, 6}, {-0.9999990677922039, 0.9999987338372813}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.6985349639928102`*^9, 3.698534985092575*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"{", 
+   RowBox[{"g1", ",", " ", "g2"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698535006358197*^9, 3.69853501859796*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{CircleBox[{1, 1}, 3], DiskBox[{1, 1}, 2]}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], Opacity[
+     1.], LineBox[CompressedData["
+1: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
+0q2Cqzjc06Dv/TFtgcTGul5FfMLTMFV4Sug7iX3ut59bQZ8GTq/mXW0Svxo3
+YWjLToO9z3VLSzJ+/cHMr/sVpmFe4MYRFTI//wd5R0eVadjH1LydPEdgbZFI
+qr/WNBgKHhBqmSH9OTv9+Y7uNGTJu5fkTpH+FDlYJxtMQ5Ev8cdkgsA/1lRy
+F5pMw9GBOdVb/wg8Fqj79q/FNFznutXqTZD+tCWZ/7OeBqGJYxwJFumPHm1a
+yGEa0m5NOJ0cIPvxgX+8vOs0/Jz/Ym7bQ+BPE/1G2y5MgxNRkiHQQfplcYhj
+fnkauPbTEuybSb8+5t91vj4NKSqmK8/VExiJquwIDJ+GB2ncuuv+ENjD5W7P
+/TtkvUsB3DG/yP5d67ap+OU0ZKwXLr+ACbx4reFvWzJZ76cUgpVNYPV2g6DJ
+tGlI4Ns9x/hM4IiHMn8Uf0zDxZ+qEr4vCbxXrNg9uGca1pgI2wQEEdjXVYv5
+hDUNHr1jtb5+5LyUPM1LG58GIwZf4xpPUs/rXiLdlBnofJ/YGG5L6jMl/05f
+cQbSHStCX2mS83I48qCV+gycnXWlrlci8JrP09Oe2jNw/WDYoDU5z0FulXue
+756B7ZE7NOq4yfo6/XsXT8+AbaCf9apyDp71qGOFn5uBAaL52Opv5HmxqD4u
+fXEGjlrp5LV+5mCl5e08m4JngPphcXPUfQ4WOaa/+syLGTgTeV699DgHN/3m
+s6lsm4GXlY9LC1vZONbGzt62bwaSDpVpPfrNxvuHMs8OsmcgPnyH3MZcNv4m
+4OzLuzADmrFveO/eZ+NXBmV3t8jNAt/2gRtHTNn4fHZUVfyxWah8djav/D0L
+q+3pb1A7MQubkd7u+Pss3FsH7V+cZiFeLHBMM4iFLcdG2DUXZ8GPYxH4mDy/
+YcMhqmDcLEh/zXwZPD+MRRKljDyrZuHFtouSzduHcdLt57lo7xxY/9ssKBkz
+iP2XK9A8D87BL9+Jp3znB7HF25dO8VZzEGt743KGxSBe/P6Ktnh2DryO6Fkc
+lBjERyffn8kNm4Nd8m0eQTEDWPD4Fwmd33Ow82jqQ0ny/8xNpdpV1Wwe/Muh
+x0WnFxtkHSqwPjYPyyLxxYplvVjasI4ZdmIebk/7JcwN9OCfxxsLBjzmIWwS
+WaU/6sErY9qkXkXPg1xYlcO7uW5cNTVUuLp6Ht57gTtvehfe/JN3OfPIAvAK
+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
+      "]]}}},
+  Axes->True]], "Output",
+ CellChangeTimes->{3.698535019081423*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{"Orange", ",", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Pi", "/", "4"}], ",", 
+        RowBox[{"3", 
+         RowBox[{"Pi", "/", "4"}]}]}], "}"}]}], "]"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.698535174340255*^9, 3.6985351991364393`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 0.5, 0], 
+   DiskBox[{0, 0}, 1, 
+    NCache[{Rational[1, 4] Pi, Rational[3, 4] Pi}, {0.7853981633974483, 
+     2.356194490192345}]]}]], "Output",
+ CellChangeTimes->{3.698535200048687*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"d3", " ", "=", " ", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{"Orange", ",", 
+       RowBox[{"Disk", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Pi", "/", "4"}], ",", 
+           RowBox[{"Pi", "/", "2"}]}], "}"}]}], "]"}]}], "}"}], "]"}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"d4", " ", "=", " ", 
+    RowBox[{"Graphics", "[", 
+     RowBox[{"{", 
+      RowBox[{"Blue", ",", 
+       RowBox[{"Disk", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Pi", "/", "2"}], ",", 
+           RowBox[{"3", 
+            RowBox[{"Pi", "/", "4"}]}]}], "}"}]}], "]"}]}], "}"}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.698535983144198*^9, 3.698535988523918*^9}, {
+  3.6985360190307426`*^9, 3.698536063656725*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 0.5, 0], 
+   DiskBox[{0, 0}, 1, 
+    NCache[{Rational[1, 4] Pi, Rational[1, 2] Pi}, {0.7853981633974483, 
+     1.5707963267948966`}]]}]], "Output",
+ CellChangeTimes->{3.6985360716164017`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[0, 0, 1], 
+   DiskBox[{0, 0}, 1, 
+    NCache[{Rational[1, 2] Pi, Rational[3, 4] Pi}, {1.5707963267948966`, 
+     2.356194490192345}]]}]], "Output",
+ CellChangeTimes->{3.698536071654765*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"{", 
+   RowBox[{"d3", ",", "d4"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6985360797991858`*^9, 3.6985360894394836`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0.5, 0], 
+    DiskBox[{0, 0}, 1, 
+     NCache[{Rational[1, 4] Pi, Rational[1, 2] Pi}, {0.7853981633974483, 
+      1.5707963267948966`}]]}, 
+   {RGBColor[0, 0, 1], 
+    DiskBox[{0, 0}, 1, 
+     NCache[{Rational[1, 2] Pi, Rational[3, 4] Pi}, {1.5707963267948966`, 
+      2.356194490192345}]]}}]], "Output",
+ CellChangeTimes->{3.698536090746358*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"RGBColor", "[", 
+  RowBox[{"1", ",", "0", ",", "0"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698536601201805*^9, 3.6985366836684093`*^9}, {
+  3.698536764538409*^9, 3.698536794103691*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ InterpretationBox[
+  ButtonBox[
+   TooltipBox[
+    RowBox[{
+     GraphicsBox[{
+       {GrayLevel[0], RectangleBox[{0, 0}]}, 
+       {GrayLevel[0], RectangleBox[{1, -1}]}, 
+       {RGBColor[1, 0, 0], RectangleBox[{0, -1}, {2, 1}]}},
+      AspectRatio->1,
+      Frame->True,
+      FrameStyle->RGBColor[0.6666666666666666, 0., 0.],
+      FrameTicks->None,
+      ImageSize->
+       Dynamic[{
+        Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+         Magnification]}],
+      PlotRangePadding->None], "\[InvisibleSpace]"}],
+    "RGBColor[1, 0, 0]"],
+   Appearance->None,
+   BaseStyle->{},
+   BaselinePosition->Baseline,
+   ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+     If[
+      Not[
+       AbsoluteCurrentValue["Deployed"]], 
+      SelectionMove[Typeset`box$, All, Expression]; 
+      FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+      FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[1, 0, 0]; 
+      FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+      MathLink`CallFrontEnd[
+        FrontEnd`AttachCell[Typeset`box$, 
+         FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+         Left, Top}, 
+         "ClosingActions" -> {
+          "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+   DefaultBaseStyle->{},
+   Evaluator->Automatic,
+   Method->"Preemptive"],
+  RGBColor[1, 0, 0],
+  Editable->False,
+  Selectable->False], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"RGBColor", "[", 
+     RowBox[{"1", ",", "0", ",", "0"}], "]"}], ",", 
+    RowBox[{"Disk", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", "1", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Pi", "/", "4"}], ",", 
+        RowBox[{"3", 
+         RowBox[{"Pi", "/", "4"}]}]}], "}"}]}], "]"}]}], "}"}], "]"}]}], \
+"Input",
+ CellChangeTimes->{{3.698536811112014*^9, 3.698536827623352*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  ButtonBox[
+   TooltipBox[
+    RowBox[{
+     GraphicsBox[{
+       {GrayLevel[0], RectangleBox[{0, 0}]}, 
+       {GrayLevel[0], RectangleBox[{1, -1}]}, 
+       {RGBColor[1, 0, 0], RectangleBox[{0, -1}, {2, 1}]}},
+      AspectRatio->1,
+      Frame->True,
+      FrameStyle->RGBColor[0.6666666666666666, 0., 0.],
+      FrameTicks->None,
+      ImageSize->
+       Dynamic[{
+        Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+         Magnification]}],
+      PlotRangePadding->None], "\[InvisibleSpace]"}],
+    "RGBColor[1, 0, 0]"],
+   Appearance->None,
+   BaseStyle->{},
+   BaselinePosition->Baseline,
+   ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+     If[
+      Not[
+       AbsoluteCurrentValue["Deployed"]], 
+      SelectionMove[Typeset`box$, All, Expression]; 
+      FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+      FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[1, 0, 0]; 
+      FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+      MathLink`CallFrontEnd[
+        FrontEnd`AttachCell[Typeset`box$, 
+         FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+         Left, Top}, 
+         "ClosingActions" -> {
+          "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+   DefaultBaseStyle->{},
+   Evaluator->Automatic,
+   Method->"Preemptive"],
+  RGBColor[1, 0, 0],
+  Editable->False,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.698536828429426*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[1, 0, 0], 
+   DiskBox[{0, 0}, 1, 
+    NCache[{Rational[1, 4] Pi, Rational[3, 4] Pi}, {0.7853981633974483, 
+     2.356194490192345}]]}]], "Output",
+ CellChangeTimes->{3.6985368284329653`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"r1", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"Yellow", ",", " ", 
+    RowBox[{"Rectangle", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "2"}], "}"}]}], "]"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.698536844554124*^9, 3.6985369423319798`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   InterpretationBox[
+    ButtonBox[
+     TooltipBox[
+      RowBox[{
+       GraphicsBox[{
+         {GrayLevel[0], RectangleBox[{0, 0}]}, 
+         {GrayLevel[0], RectangleBox[{1, -1}]}, 
+         {RGBColor[1, 1, 0], RectangleBox[{0, -1}, {2, 1}]}},
+        AspectRatio->1,
+        Frame->True,
+        FrameStyle->RGBColor[0.6666666666666666, 0.6666666666666666, 0.],
+        FrameTicks->None,
+        ImageSize->
+         Dynamic[{
+          Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+           Magnification]}],
+        PlotRangePadding->None], "\[InvisibleSpace]"}],
+      "RGBColor[1, 1, 0]"],
+     Appearance->None,
+     BaseStyle->{},
+     BaselinePosition->Baseline,
+     ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+       If[
+        Not[
+         AbsoluteCurrentValue["Deployed"]], 
+        SelectionMove[Typeset`box$, All, Expression]; 
+        FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+        FrontEnd`Private`$ColorSelectorInitialColor = RGBColor[1, 1, 0]; 
+        FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+        MathLink`CallFrontEnd[
+          FrontEnd`AttachCell[Typeset`box$, 
+           FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+           Left, Top}, 
+           "ClosingActions" -> {
+            "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+     DefaultBaseStyle->{},
+     Evaluator->Automatic,
+     Method->"Preemptive"],
+    RGBColor[1, 1, 0],
+    Editable->False,
+    Selectable->False], ",", 
+   RowBox[{"Rectangle", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}]}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.698536895328959*^9, {3.6985369299064293`*^9, 3.698536943051322*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Rotate", "[", 
+     RowBox[{"r1", ",", 
+      RowBox[{"\[Pi]", "/", "4"}]}], "]"}], ",", " ", 
+    RowBox[{"Text", "[", 
+     RowBox[{"Style", "[", 
+      RowBox[{"\"\<Rect\>\"", ",", " ", 
+       RowBox[{"FontSize", "\[Rule]", "20"}]}], "]"}], "]"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.698536947338043*^9, 3.6985369547391777`*^9}, {
+  3.698538155238978*^9, 3.698538313912488*^9}, {3.698538403993678*^9, 
+  3.698538435795294*^9}, {3.698538483428598*^9, 3.698538501295397*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{GeometricTransformationBox[
+    {RGBColor[1, 1, 0], RectangleBox[{0, 0}, {2, 2}]}, {{{
+     0.7071067811865475, -0.7071067811865475}, {0.7071067811865475, 
+     0.7071067811865475}}, Center}], InsetBox[
+    StyleBox["\<\"Rect\"\>",
+     StripOnInput->False,
+     FontSize->20], {0, 0}]}]], "Output",
+ CellChangeTimes->{
+  3.698538265522625*^9, {3.698538296896966*^9, 3.698538314515913*^9}, {
+   3.698538406781249*^9, 3.6985384362364473`*^9}, {3.69853849435988*^9, 
+   3.6985385021186857`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Para", " ", "todos", " ", "los", " ", "estados"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Funci\[OAcute]n", " ", "que", " ", "toma", " ", "los", " ", "estados", 
+    " ", "y", " ", "me", " ", "devuelve", " ", "la", " ", "suma", " ", "de", 
+    " ", "sentenciados", " ", "y", " ", "procesados", " ", "por", " ", 
+    "estado"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.698543179097515*^9, 3.6985432217210712`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ndata", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ";;", "3"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.698543647227036*^9, 3.698543668771617*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #4 \\\"\\\"CUICATL\
+\[CapitalAAcute]N\\\"\\\".\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "20", ",", "\<\"OAXACA\"\>", 
+     ",", "\<\"CENTRO DE REINSERCI\[CapitalOAcute]N SOCIAL #8 \\\"\\\"MAT\
+\[CapitalIAcute]AS ROMERO\\\"\\\".\"\>", ",", "0", ",", "4"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.698543648517589*^9, 3.698543669343651*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Sentenciados", "[", 
+    RowBox[{"data_", ",", " ", "estado1_"}], "]"}], " ", ":=", " ", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"sdata1", ",", " ", "sdata2", ",", " ", "sdata3"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"sdata1", "=", 
+       RowBox[{"Select", "[", 
+        RowBox[{"data", ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], " ", "===", " ", "estado1"}], " ",
+           "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"sdata2", " ", "=", " ", 
+       RowBox[{"sdata1", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "4"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"sdata3", " ", "=", " ", 
+       RowBox[{"sdata1", "[", 
+        RowBox[{"[", 
+         RowBox[{"All", ",", "5"}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"estado1", ",", 
+        RowBox[{"Total", "[", "sdata2", "]"}], ",", 
+        RowBox[{"Total", "[", "sdata3", "]"}]}], "}"}]}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.698542851206616*^9, 3.698542939188012*^9}, {
+   3.698542981402486*^9, 3.698542998330139*^9}, {3.698543029080711*^9, 
+   3.698543031415681*^9}, {3.698543225162842*^9, 3.698543253208914*^9}, {
+   3.698543424532179*^9, 3.69854343896355*^9}, {3.698543644019718*^9, 
+   3.698543644163663*^9}, 3.698543675782526*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"tdata", "=", " ", 
+  RowBox[{"DeleteDuplicates", "[", 
+   RowBox[{"ndata", "[", 
+    RowBox[{"[", 
+     RowBox[{
+      RowBox[{"2", ";;", 
+       RowBox[{"-", "1"}]}], ",", "2"}], "]"}], "]"}], "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"OAXACA\"\>", ",", "\<\"CHIAPAS\"\>", ",", "\<\"NAYARIT\"\>", 
+   ",", "\<\"SONORA\"\>", ",", "\<\"GUERRERO\"\>", 
+   ",", "\<\"DISTRITO FEDERAL\"\>", ",", "\<\"CHIHUAHUA\"\>", 
+   ",", "\<\"YUCAT\[CapitalAAcute]N\"\>", 
+   ",", "\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "\<\"HIDALGO\"\>", 
+   ",", "\<\"SINALOA\"\>", ",", "\<\"MICHOAC\[CapitalAAcute]N\"\>", 
+   ",", "\<\"PUEBLA\"\>", ",", "\<\"BAJA CALIFORNIA\"\>", 
+   ",", "\<\"VERACRUZ\"\>", ",", "\<\"GUANAJUATO\"\>", ",", "\<\"COLIMA\"\>", 
+   ",", "\<\"MORELOS\"\>", ",", "\<\"JALISCO\"\>", ",", "\<\"TABASCO\"\>", 
+   ",", "\<\"DURANGO\"\>", ",", "\<\"CAMPECHE\"\>", ",", "\<\"COAHUILA\"\>", 
+   ",", "\<\"QUER\[CapitalEAcute]TARO\"\>", 
+   ",", "\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "\<\"QUINTANA ROO\"\>", 
+   ",", "\<\"ZACATECAS\"\>", ",", "\<\"AGUASCALIENTES\"\>", 
+   ",", "\<\"BAJA CALIFORNIA SUR\"\>", 
+   ",", "\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "\<\"TAMAULIPAS\"\>", 
+   ",", "\<\"TLAXCALA\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.698543259060495*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Do", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"rdata", " ", "=", " ", 
+      RowBox[{"Sentenciados", "[", 
+       RowBox[{"ndata", ",", "i"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", "rdata", "]"}], ";"}], "\[IndentingNewLine]", ",", 
+    
+    RowBox[{"{", 
+     RowBox[{"i", ",", " ", "tdata"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.698543330398851*^9, 3.698543369581601*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"OAXACA\"\>", ",", "88", ",", "102"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448054585*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CHIAPAS\"\>", ",", "60", ",", "125"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448059943*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NAYARIT\"\>", ",", "60", ",", "18"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448067762*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SONORA\"\>", ",", "15", ",", "59"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434480705633`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GUERRERO\"\>", ",", "13", ",", "28"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448073387*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448076181*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434480790854`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23", ",", "5"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448081883*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5", ",", "17"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448084687*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"HIDALGO\"\>", ",", "7", ",", "11"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448087562*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SINALOA\"\>", ",", "9", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448090375*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10", ",", "6"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448093204*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"PUEBLA\"\>", ",", "10", ",", "5"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448096036*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8", ",", "6"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448098839*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"VERACRUZ\"\>", ",", "4", ",", "8"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448101634*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"GUANAJUATO\"\>", ",", "10", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448104417*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"COLIMA\"\>", ",", "2", ",", "9"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448107175*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"MORELOS\"\>", ",", "3", ",", "7"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448109992*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"JALISCO\"\>", ",", "1", ",", "9"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448112813*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TABASCO\"\>", ",", "8", ",", "2"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481156187`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"DURANGO\"\>", ",", "5", ",", "3"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448118425*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"CAMPECHE\"\>", ",", "0", ",", "7"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448121214*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"COAHUILA\"\>", ",", "6", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.69854344812399*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1", ",", "2"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481267433`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1", ",", "0"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481311073`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481353407`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"ZACATECAS\"\>", ",", "0", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481388693`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448141922*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0", ",", "0"}], "}"}]], "Print",\
+
+ CellChangeTimes->{3.698543371227352*^9, 3.6985434481447783`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0", ",", "0"}], 
+  "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448147587*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448150402*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"TLAXCALA\"\>", ",", "0", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{3.698543371227352*^9, 3.698543448153208*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mdata", " ", "=", " ", 
+  RowBox[{"Map", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sentenciados", "[", 
+      RowBox[{"ndata", ",", "#"}], "]"}], "&"}], ",", "tdata"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.698543574427298*^9, 3.698543611452956*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "88", ",", "102"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIAPAS\"\>", ",", "60", ",", "125"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NAYARIT\"\>", ",", "60", ",", "18"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SONORA\"\>", ",", "15", ",", "59"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUERRERO\"\>", ",", "13", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23", ",", "5"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5", ",", "17"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"HIDALGO\"\>", ",", "7", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SINALOA\"\>", ",", "9", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10", ",", "6"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PUEBLA\"\>", ",", "10", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"VERACRUZ\"\>", ",", "4", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUANAJUATO\"\>", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COLIMA\"\>", ",", "2", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MORELOS\"\>", ",", "3", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"JALISCO\"\>", ",", "1", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TABASCO\"\>", ",", "8", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DURANGO\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CAMPECHE\"\>", ",", "0", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COAHUILA\"\>", ",", "6", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ZACATECAS\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TLAXCALA\"\>", ",", "0", ",", "0"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.698543613688141*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrependTo", "[", 
+  RowBox[{"mdata", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<Estado\>\"", ",", "\"\<Procesados\>\"", ",", " ", 
+     "\"\<Sentenciados\>\""}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.698543816587387*^9, 3.698543867763625*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"Estado\"\>", ",", "\<\"Procesados\"\>", 
+     ",", "\<\"Sentenciados\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"OAXACA\"\>", ",", "88", ",", "102"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIAPAS\"\>", ",", "60", ",", "125"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NAYARIT\"\>", ",", "60", ",", "18"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SONORA\"\>", ",", "15", ",", "59"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUERRERO\"\>", ",", "13", ",", "28"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DISTRITO FEDERAL\"\>", ",", "27", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CHIHUAHUA\"\>", ",", "24", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"YUCAT\[CapitalAAcute]N\"\>", ",", "23", ",", "5"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ESTADO DE M\[CapitalEAcute]XICO\"\>", ",", "5", ",", "17"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"HIDALGO\"\>", ",", "7", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SINALOA\"\>", ",", "9", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MICHOAC\[CapitalAAcute]N\"\>", ",", "10", ",", "6"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PUEBLA\"\>", ",", "10", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA\"\>", ",", "8", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"VERACRUZ\"\>", ",", "4", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"GUANAJUATO\"\>", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COLIMA\"\>", ",", "2", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MORELOS\"\>", ",", "3", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"JALISCO\"\>", ",", "1", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TABASCO\"\>", ",", "8", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"DURANGO\"\>", ",", "5", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"CAMPECHE\"\>", ",", "0", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"COAHUILA\"\>", ",", "6", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUER\[CapitalEAcute]TARO\"\>", ",", "1", ",", "2"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"NUEVO LE\[CapitalOAcute]N\"\>", ",", "1", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"QUINTANA ROO\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"ZACATECAS\"\>", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"AGUASCALIENTES\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"BAJA CALIFORNIA SUR\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"SAN LUIS POTOS\[CapitalIAcute]\"\>", ",", "0", ",", "0"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TAMAULIPAS\"\>", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TLAXCALA\"\>", ",", "0", ",", "0"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6985438703028393`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<Desktop/sentenciados.csv\>\"", ",", " ", "mdata", ",", "\"\<CSV\>\""}],
+   "]"}]], "Input"],
+
+Cell[BoxData["\<\"Desktop/sentenciados.csv\"\>"], "Output",
+ CellChangeTimes->{3.698543894449203*^9}]
+}, Open  ]]
+},
+WindowSize->{703, 755},
+WindowMargins->{{Automatic, 71}, {Automatic, 0}},
+Magnification:>0.75 Inherited,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 334, 8, 23, "Input"],
+Cell[CellGroupData[{
+Cell[917, 32, 179, 3, 23, "Input"],
+Cell[1099, 37, 220, 3, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1356, 45, 291, 6, 23, "Input"],
+Cell[1650, 53, 1584, 29, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3271, 87, 531, 12, 49, "Input"],
+Cell[3805, 101, 21089, 529, 1608, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24931, 635, 372, 10, 23, "Input"],
+Cell[25306, 647, 2886, 73, 218, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28229, 725, 336, 8, 23, "Input"],
+Cell[28568, 735, 1290, 32, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29895, 772, 311, 8, 23, "Input"],
+Cell[30209, 782, 140, 3, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30386, 790, 472, 11, 23, "Input"],
+Cell[30861, 803, 13868, 468, 346, "Output"]
+}, Open  ]],
+Cell[44744, 1274, 201, 4, 23, "Input"],
+Cell[CellGroupData[{
+Cell[44970, 1282, 609, 16, 23, "Input"],
+Cell[45582, 1300, 2989, 77, 234, "Output"]
+}, Open  ]],
+Cell[48586, 1380, 386, 11, 23, "Input"],
+Cell[CellGroupData[{
+Cell[48997, 1395, 207, 5, 23, "Input"],
+Cell[49207, 1402, 149, 2, 23, "Output"]
+}, Open  ]],
+Cell[49371, 1407, 1061, 26, 62, "Input"],
+Cell[CellGroupData[{
+Cell[50457, 1437, 178, 3, 23, "Input"],
+Cell[50638, 1442, 93, 1, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50768, 1448, 411, 10, 49, "Input"],
+Cell[51182, 1460, 169, 2, 23, "Output"],
+Cell[51354, 1464, 1189, 19, 68, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52580, 1488, 874, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[53479, 1511, 351, 7, 18, "Print"],
+Cell[53833, 1520, 352, 7, 18, "Print"],
+Cell[54188, 1529, 354, 7, 18, "Print"],
+Cell[54545, 1538, 351, 7, 18, "Print"],
+Cell[54899, 1547, 355, 7, 18, "Print"],
+Cell[55257, 1556, 361, 7, 18, "Print"],
+Cell[55621, 1565, 354, 7, 18, "Print"],
+Cell[55978, 1574, 367, 7, 20, "Print"],
+Cell[56348, 1583, 380, 8, 20, "Print"],
+Cell[56731, 1593, 351, 7, 18, "Print"],
+Cell[57085, 1602, 351, 7, 18, "Print"],
+Cell[57439, 1611, 369, 7, 20, "Print"],
+Cell[57811, 1620, 353, 7, 18, "Print"],
+Cell[58167, 1629, 359, 7, 18, "Print"],
+Cell[58529, 1638, 352, 7, 18, "Print"],
+Cell[58884, 1647, 357, 7, 18, "Print"],
+Cell[59244, 1656, 350, 7, 18, "Print"],
+Cell[59597, 1665, 351, 7, 18, "Print"],
+Cell[59951, 1674, 351, 7, 18, "Print"],
+Cell[60305, 1683, 350, 7, 18, "Print"],
+Cell[60658, 1692, 353, 7, 18, "Print"],
+Cell[61014, 1701, 352, 7, 18, "Print"],
+Cell[61369, 1710, 352, 7, 18, "Print"],
+Cell[61724, 1719, 368, 7, 20, "Print"],
+Cell[62095, 1728, 368, 7, 20, "Print"],
+Cell[62466, 1737, 356, 7, 18, "Print"],
+Cell[62825, 1746, 353, 7, 18, "Print"],
+Cell[63181, 1755, 358, 7, 18, "Print"],
+Cell[63542, 1764, 363, 7, 18, "Print"],
+Cell[63908, 1773, 379, 8, 20, "Print"],
+Cell[64290, 1783, 356, 7, 18, "Print"],
+Cell[64649, 1792, 352, 7, 18, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[65028, 1803, 728, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[65781, 1826, 99, 1, 23, "Input"],
+Cell[65883, 1829, 2636, 68, 103, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68556, 1902, 384, 10, 23, "Input"],
+Cell[68943, 1914, 521, 9, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69501, 1928, 294, 8, 23, "Input"],
+Cell[69798, 1938, 585, 10, 36, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70420, 1953, 188, 4, 23, "Input"],
+Cell[70611, 1959, 2685, 69, 103, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[73333, 2033, 345, 10, 23, "Input"],
+Cell[73681, 2045, 2659, 69, 103, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[76377, 2119, 264, 6, 23, "Input"],
+Cell[76644, 2127, 206, 3, 23, "Output"]
+}, Open  ]],
+Cell[76865, 2133, 144, 2, 23, "Input"],
+Cell[77012, 2137, 345, 7, 36, "Input"],
+Cell[CellGroupData[{
+Cell[77382, 2148, 284, 7, 23, "Input"],
+Cell[77669, 2157, 226, 6, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77932, 2168, 203, 4, 23, "Input"],
+Cell[78138, 2174, 167, 4, 281, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78342, 2183, 234, 6, 23, "Input"],
+Cell[78579, 2191, 193, 5, 23, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[78809, 2201, 130, 2, 23, "Input"],
+Cell[78942, 2205, 126, 2, 281, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79105, 2212, 342, 8, 23, "Input"],
+Cell[79450, 2222, 187, 4, 281, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[79674, 2231, 411, 10, 23, "Input"],
+Cell[80088, 2243, 19838, 335, 172, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99963, 2583, 176, 4, 23, "Input"],
+Cell[100142, 2589, 19172, 316, 216, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119351, 2910, 448, 14, 23, "Input"],
+Cell[119802, 2926, 230, 6, 205, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[120069, 2937, 1042, 31, 49, "Input"],
+Cell[121114, 2970, 234, 6, 335, "Output"],
+Cell[121351, 2978, 229, 6, 335, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121617, 2989, 176, 4, 23, "Input"],
+Cell[121796, 2995, 391, 10, 205, "Output"]
+}, Open  ]],
+Cell[122202, 3008, 211, 4, 23, "Input"],
+Cell[CellGroupData[{
+Cell[122438, 3016, 1952, 57, 37, InheritFromParent],
+Cell[124393, 3075, 1479, 42, 24, "Output"],
+Cell[125875, 3119, 230, 6, 205, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[126142, 3130, 359, 10, 23, "Input"],
+Cell[126504, 3142, 1841, 51, 26, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[128382, 3198, 574, 14, 23, "Input"],
+Cell[128959, 3214, 521, 11, 281, "Output"]
+}, Open  ]],
+Cell[129495, 3228, 517, 11, 49, "Input"],
+Cell[CellGroupData[{
+Cell[130037, 3243, 172, 4, 23, "Input"],
+Cell[130212, 3249, 548, 14, 42, "Output"]
+}, Open  ]],
+Cell[130775, 3266, 1520, 38, 88, "Input"],
+Cell[CellGroupData[{
+Cell[132320, 3308, 236, 7, 23, "Input"],
+Cell[132559, 3317, 1089, 18, 68, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[133685, 3340, 481, 12, 62, "Input"],
+Cell[CellGroupData[{
+Cell[134191, 3356, 162, 3, 18, "Print"],
+Cell[134356, 3361, 163, 3, 18, "Print"],
+Cell[134522, 3366, 162, 3, 18, "Print"],
+Cell[134687, 3371, 163, 3, 18, "Print"],
+Cell[134853, 3376, 163, 3, 18, "Print"],
+Cell[135019, 3381, 170, 3, 18, "Print"],
+Cell[135192, 3386, 165, 3, 18, "Print"],
+Cell[135360, 3391, 179, 4, 20, "Print"],
+Cell[135542, 3397, 188, 4, 20, "Print"],
+Cell[135733, 3403, 161, 3, 18, "Print"],
+Cell[135897, 3408, 160, 3, 18, "Print"],
+Cell[136060, 3413, 181, 4, 20, "Print"],
+Cell[136244, 3419, 160, 3, 18, "Print"],
+Cell[136407, 3424, 168, 3, 18, "Print"],
+Cell[136578, 3429, 161, 3, 18, "Print"],
+Cell[136742, 3434, 164, 3, 18, "Print"],
+Cell[136909, 3439, 159, 3, 18, "Print"],
+Cell[137071, 3444, 160, 3, 18, "Print"],
+Cell[137234, 3449, 160, 3, 18, "Print"],
+Cell[137397, 3454, 162, 3, 18, "Print"],
+Cell[137562, 3459, 160, 3, 18, "Print"],
+Cell[137725, 3464, 161, 3, 18, "Print"],
+Cell[137889, 3469, 160, 3, 18, "Print"],
+Cell[138052, 3474, 182, 4, 20, "Print"],
+Cell[138237, 3480, 183, 4, 20, "Print"],
+Cell[138423, 3486, 167, 3, 18, "Print"],
+Cell[138593, 3491, 164, 3, 18, "Print"],
+Cell[138760, 3496, 167, 3, 18, "Print"],
+Cell[138930, 3501, 176, 4, 18, "Print"],
+Cell[139109, 3507, 186, 4, 20, "Print"],
+Cell[139298, 3513, 163, 3, 18, "Print"],
+Cell[139464, 3518, 161, 3, 18, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[139674, 3527, 284, 8, 23, "Input"],
+Cell[139961, 3537, 2966, 74, 119, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[142964, 3616, 279, 7, 23, "Input"],
+Cell[143246, 3625, 3092, 77, 116, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[146375, 3707, 148, 4, 23, "Input"],
+Cell[146526, 3713, 101, 1, 23, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
